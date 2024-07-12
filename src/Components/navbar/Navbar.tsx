@@ -32,7 +32,7 @@ function classNames(...classes: string[]) {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <Disclosure as="nav" className="bg-gray-900">
+    <Disclosure as="nav" className="absolute z-10 w-full">
       <div className="mx-auto max-w-screen-2xl px-2 sm:px-6 lg:px-12">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -80,7 +80,7 @@ export default function Navbar() {
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
-              className="relative rounded-full bg-gray-900 p-1 text-gray-300 hover:text-white focus:outline-none "
+              className="relative rounded-full  p-1 text-gray-300 hover:text-white focus:outline-none "
             >
               <span className="absolute -inset-1.5" />
               <span className="sr-only">View cart</span>
@@ -91,7 +91,7 @@ export default function Navbar() {
               <div>
                 <MenuButton
                   onClick={() => setOpen(true)}
-                  className="relative flex rounded-full bg-gray-900 p-1 text-gray-300 hover:text-white focus:outline-none"
+                  className="relative flex rounded-full p-1 text-gray-300 hover:text-white focus:outline-none"
                 >
                   <ShoppingCartIcon aria-hidden="true" className="h-6 w-6" />
                   <ShopingCart open={open} setOpen={setOpen}></ShopingCart>
@@ -101,7 +101,7 @@ export default function Navbar() {
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
-                <MenuButton className="relative flex rounded-full bg-gray-900 p-1 text-gray-300 hover:text-white focus:outline-none">
+                <MenuButton className="relative flex rounded-full p-1 text-gray-300 hover:text-white focus:outline-none">
                   <UserIcon aria-hidden="true" className="h-6 w-6" />
                 </MenuButton>
               </div>
