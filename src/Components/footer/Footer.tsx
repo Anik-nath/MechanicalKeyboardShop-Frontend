@@ -1,10 +1,14 @@
 import logo from "../../assets/logo/logo-1.png";
+import Newsletter from "../Newsletter/Newsletter";
 
 const Footer = () => {
   return (
     <>
-      <div className="bg-gray-900">
-        <div className="max-w-screen-2xl px-2 sm:px-6 lg:px-12 p-4 py-6 lg:py-8 ">
+      <div>
+        <Newsletter></Newsletter>
+      </div>
+      <section className="bg-gray-900">
+        <div className="max-w-screen-2xl px-6 sm:px-6 lg:px-12 p-4 py-6 lg:py-8 ">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <div className="flex items-center">
@@ -170,7 +174,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

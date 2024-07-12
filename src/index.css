@@ -35,14 +35,19 @@ body {
   background-image: linear-gradient(45deg, #0ef0f0 15%, #0075f2 65%);
   border: none;
   color: white;
-  padding: 14px 32px;
+  padding: 12px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  margin: 4px 2px;
+  /* margin: 4px 2px; */
   cursor: pointer;
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 .gradient-button:hover {
   background-image: linear-gradient(45deg, #0ef0f0 0%, #0075f2 100%);
+}
+.glass-bg {
+  background: rgba(255, 255, 255, 0.158); /* White with 20% opacity */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
 }
