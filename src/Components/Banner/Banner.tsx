@@ -29,7 +29,7 @@ const Banner = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     draggable: true,
     autoplaySpeed: 5000,
     arrows: false,
