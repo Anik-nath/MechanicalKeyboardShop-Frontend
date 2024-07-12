@@ -1,9 +1,20 @@
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Navbar from "./Components/navbar/Navbar";
+import Home from "./Pages/Home/Home";
+import Footer from "./Components/footer/Footer";
+
 function App() {
   return (
     <>
-      <h1 className="text-3xl text-red-700 font-bold">
-        MechanicalKeyboardShop-Frontend
-      </h1>
+      <BrowserRouter>
+        <Navbar></Navbar>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/home" element={<Home></Home>}></Route>
+          <Route path="*" element={<Home></Home>} />
+        </Routes>
+        <Footer></Footer>
+      </BrowserRouter>
     </>
   );
 }

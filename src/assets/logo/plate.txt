@@ -1,0 +1,13 @@
+Brand Guide
+Typography
+Business Name Font
+Bree Serif
+
+Color Palette
+#FFFFFF
+#130912
+#0ef0f0
+#000000
+#130912
+#FAFAFA
+linear-gradient(45deg, var(##0ef0f0) 15%, var(#0075f2) 65%)
