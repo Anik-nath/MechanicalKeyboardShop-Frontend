@@ -1,7 +1,7 @@
 const Newsletter = () => {
   return (
-    <>
-      <div className="bg-gray-800  mx-auto max-w-screen-2xl px-2 sm:px-6 lg:px-6">
+    <div className="bg-gray-900">
+      <div className=" bg-gray-800 max-w-screen-2xl mx-6 sm:mx-12 lg:mx-12">
         <div className="mx-auto px-4 py-12 sm:px-6 lg:py-16">
           <div className="lg:flex md:flex justify-between items-center lg:items-center">
             <div>
@@ -35,7 +35,7 @@ const Newsletter = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

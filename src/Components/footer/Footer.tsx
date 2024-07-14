@@ -68,7 +68,7 @@ const Footer = () => {
                 <ul className="text-gray-500  font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
-                      Privacy Policy
+                      Terms &amp; Conditions
                     </a>
                   </li>
                   <li className="mb-4">
@@ -78,7 +78,7 @@ const Footer = () => {
                   </li>
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
-                      Terms &amp; Conditions
+                      Privacy Policy
                     </a>
                   </li>
                 </ul>
