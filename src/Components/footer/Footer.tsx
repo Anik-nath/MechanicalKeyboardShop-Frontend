@@ -32,7 +32,7 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="mb-4">
-                    <a href="/contact" className="hover:underline">
+                    <a href="/faq" className="hover:underline">
                       FAQ
                     </a>
                   </li>
@@ -67,17 +67,17 @@ const Footer = () => {
                 </h2>
                 <ul className="text-gray-500  font-medium">
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">
+                    <a href="/termsconditions" className="hover:underline">
                       Terms &amp; Conditions
                     </a>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">
+                    <a href="/refundpolicy" className="hover:underline">
                       Refund &amp; Policiy
                     </a>
                   </li>
                   <li className="mb-4">
-                    <a href="#" className="hover:underline">
+                    <a href="/privacypolicy" className="hover:underline">
                       Privacy Policy
                     </a>
                   </li>

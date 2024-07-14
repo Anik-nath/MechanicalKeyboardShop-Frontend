@@ -8,7 +8,7 @@ const ProductCard = () => {
         <div className="bg-gradient-to-r from-orange-600 to-red-600 absolute px-2 pb-1 right-4 text-md flex flex-row items-center">
           <FireIcon className="w-5 h-5"></FireIcon> <span>Trending</span>
         </div>
-        <a href="/details">
+        <a href="/product/details">
           <div className="text-white px-4 py-6">
             <span className="text-gray-400 mr-3 uppercase text-sm">
               Kinetic Labs

@@ -6,6 +6,11 @@ import Contact from "./Pages/Contact/Contact";
 import About from "./Pages/About/About";
 import Product from "./Pages/Product/Product";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
+import Checkout from "./Pages/Checkout/Checkout";
+import Faq from "./Pages/FAQ/Faq";
+import RefundPolicy from "./Pages/RefundPolicy/RefundPolicy";
+import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
+import TermConditions from "./Pages/TermConditions/TermConditions";
 
 function App() {
   return (
@@ -18,8 +23,22 @@ function App() {
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/products" element={<Product></Product>}></Route>
+          <Route path="/checkout" element={<Checkout></Checkout>}></Route>
+          <Route path="/faq" element={<Faq></Faq>}></Route>
           <Route
-            path="/details"
+            path="/termsconditions"
+            element={<TermConditions></TermConditions>}
+          ></Route>
+          <Route
+            path="/privacypolicy"
+            element={<PrivacyPolicy></PrivacyPolicy>}
+          ></Route>
+          <Route
+            path="/refundpolicy"
+            element={<RefundPolicy></RefundPolicy>}
+          ></Route>
+          <Route
+            path="/product/details"
             element={<ProductDetails></ProductDetails>}
           ></Route>
           <Route path="*" element={<Home></Home>} />

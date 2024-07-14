@@ -120,7 +120,7 @@ const ShopingCart = ({ open, setOpen }: any) => {
                   </p>
                   <div className="mt-6">
                     <a
-                      href="#"
+                      href="/checkout"
                       className="flex items-center justify-center rounded-md gradient-button shadow-sm"
                     >
                       <ShoppingBagIcon className="h-5 w-5 mr-2"></ShoppingBagIcon>
