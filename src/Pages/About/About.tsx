@@ -13,7 +13,7 @@ const About = () => {
             />
           </div>
 
-          <div className="max-w-full bg-gray-800 md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-2">
+          <div className="max-w-full bg-gray-800 md:max-w-2xl md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-2">
             <div className="flex flex-col lg:p-12 py-12 md:px-16 px-6">
               <h2 className="text-2xl font-medium uppercase text-white lg:text-2xl">
                 About Us

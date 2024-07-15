@@ -43,8 +43,8 @@ const ShopingCart = ({ open, setOpen }: any) => {
               <div className="flex h-full flex-col overflow-y-scroll bg-slate-50 shadow-xl">
                 <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                   <div className="flex items-start justify-between">
-                    <DialogTitle className="text-lg font-medium text-gray-900">
-                      My cart
+                    <DialogTitle className="text-xl font-medium text-gray-900">
+                      Your Cart
                     </DialogTitle>
                     <div className="ml-3 flex h-7 items-center">
                       <button
@@ -121,24 +121,19 @@ const ShopingCart = ({ open, setOpen }: any) => {
                   <div className="mt-6">
                     <a
                       href="/checkout"
-                      className="flex items-center justify-center rounded-md gradient-button shadow-sm"
+                      className="flex items-center justify-center gradient-button shadow-sm"
                     >
                       <ShoppingBagIcon className="h-5 w-5 mr-2"></ShoppingBagIcon>
                       <span>Checkout</span>
                     </a>
                   </div>
-                  <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                    <p>
-                      or{" "}
-                      <button
-                        type="button"
-                        onClick={() => setOpen(false)}
-                        className="font-medium gradient-text hover:text-gray-900"
-                      >
-                        Continue Shopping
-                        <span aria-hidden="true"> &rarr;</span>
-                      </button>
-                    </p>
+                  <div className="mt-6 flex justify-center text-center text-sm text-gray-900">
+                    <a
+                      href="/cart"
+                      className="w-full py-3 font-medium gradient-border hover:text-gray-500"
+                    >
+                      Go to Cart
+                    </a>
                   </div>
                 </div>
               </div>

@@ -7,7 +7,7 @@ const Contact = () => {
             <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-32">
               <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
                 <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden  lg:w-1/2"></div>
-                <h1 className="text-2xl font-bold tracking-tight text-white">
+                <h1 className="text-2xl font-semibold tracking-tight text-white">
                   Let's Talk
                 </h1>
                 <p className="mt-12 text-md leading-8 text-gray-300">
@@ -68,7 +68,7 @@ const Contact = () => {
               </div>
             </div>
             <form className="px-6 pb-24 sm:pb-32 lg:px-8 lg:py-32">
-            <h1 className="text-2xl font-bold tracking-tight text-white">
+            <h1 className="text-2xl font-semibold tracking-tight text-white">
                   Contact Us
                 </h1>
               <div className="mx-auto mt-12 w-full lg:mr-0">

@@ -11,8 +11,10 @@ import Faq from "./Pages/FAQ/Faq";
 import RefundPolicy from "./Pages/RefundPolicy/RefundPolicy";
 import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import TermConditions from "./Pages/TermConditions/TermConditions";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
+ 
   return (
     <>
       <BrowserRouter>
@@ -23,6 +25,7 @@ function App() {
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/products" element={<Product></Product>}></Route>
+          <Route path="/cart" element={<Cart></Cart>}></Route>
           <Route path="/checkout" element={<Checkout></Checkout>}></Route>
           <Route path="/faq" element={<Faq></Faq>}></Route>
           <Route
