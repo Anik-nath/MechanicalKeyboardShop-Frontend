@@ -1,0 +1,233 @@
+[
+  {
+    "_id": "1",
+    "title": "Ducky One 2 Pro Classic RGB Double Shot PBT",
+    "brand": "Ducky",
+    "description": "Original One 2 form upgraded with Quack Mechanics EVA sound dampener and Q-Bounce synthetic padding. 3-level adjustable feet and detachable USB-C cable. N-key rollover. OEM profile Double Shot PBT keycaps with backlit legends. Stability increased by balanced weight distribution. RGB backlighting. Dragon icon on back in celebration of Year of the Dragon. Includes a bonus Year of the Dragon spacebar and a random color enter key.",
+    "image": "https://i.postimg.cc/3rCX2byS/13821-4-J8-X5-Ducky-One-2-Mini-Pro-Classic-1.jpg",
+    "availableQuantity": 13,
+    "price": 99.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "2",
+    "title": "Ducky One 3 Cosmic Blue Hotswap RGB Double Shot PBT",
+    "brand": "Ducky",
+    "description": "The One 3 series features Ducky's all new QUACK Mechanics design philosophy which focuses on achieving best-in-class aesthetics, hotswap functionality, sound dampening, stabilizers, and more! The case for the One 3 maintains a low profile while allowing for a variety of color combinations with its unique 3-layer design. Enjoy the best acoustics you'll find in a prebuilt thanks to the One 3's silicone plate dampener and EVA foam case dampener.",
+    "image": "https://i.postimg.cc/Z506tbw2/17175-ATM24-Ducky-Mecha-Pro-SF-Black-1.jpg",
+    "availableQuantity": 13,
+    "price": 159.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "3",
+    "title": "Ducky One 2 Pro Pudding Edition RGB Double Shot PBT",
+    "brand": "Ducky",
+    "description": "Original One 2 form upgraded with Quack Mechanics EVA sound dampener and Q-Bounce synthetic padding. 3-level adjustable feet and detachable USB-C cable. N-key rollover. OEM profile Double Shot PBT keycaps with translucent sides and legends with opaque tops. Stability increased by balanced weight distribution. RGB backlighting. Dragon icon on the back in celebration of Year of the Dragon. Includes a bonus Year of the Dragon spacebar and a random color enter key.",
+    "image": "https://i.postimg.cc/15vDjnrD/19052-ANMBX-Ducky-One-2-Pro-Pudding-Edition-1.jpg",
+    "availableQuantity": 13,
+    "price": 94.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "4",
+    "title": "Ducky Origin Vintage Double Shot PBT",
+    "brand": "Ducky",
+    "description": "Kailh yellow hotswap sockets on stabilizer keys (ESC, Back Space, Enter, left Shift, right Shift, Space Bar, Numeric 0, +, and Enter). Detachable braided USB-C cable. Bonus enter key in a random color. OEM profile Double Shot PBT keycaps. South-facing switches. Exceptionally slim and narrow bezel design.",
+    "image": "https://i.postimg.cc/rFVSjCx8/17173-2-BX5-S-Origin-Vintage-1.jpg",
+    "availableQuantity": 13,
+    "price": 89.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "5",
+    "title": "Ducky One 3 Gossamer Pink Hotswap Double Shot PBT",
+    "brand": "Ducky",
+    "description": "The One 3 series features Ducky's QUACK Mechanics design philosophy which focuses on achieving best-in-class aesthetics, hotswap functionality, sound dampening, stabilizers, and more! The case for the One 3 maintains a low profile while allowing for a variety of color combinations with its unique 3-layer design. Enjoy the best acoustics you'll find in a prebuilt thanks to the One 3's silicone plate dampener and EVA foam case dampener.",
+    "image": "https://i.postimg.cc/XYhdnRhJ/15460-63cef6d2d19b8-One-3-Gossamer-Pink-1.jpg",
+    "availableQuantity": 13,
+    "price": 119.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "6",
+    "title": "Ducky x MK Strawberry Frog One 3 TKL Hotswap",
+    "brand": "Ducky",
+    "description": "Ducky x MK designed Limited Edition Strawberry Frog One 3 TKL Featuring Ducky's QUACK Mechanics design philosophy. Dual layer hotswap PCB w/ exclusive Kailh yellow hotswap sockets. Equipped with dual-layer high-grade silicone and EVA foam sound dampeners. Incredible XDA profile PBT keycaps with Dye Sub print. Per-key programmable RGB. 3 level adjustable feet. Improved PCB design, V2 stabilizers, and remapped macro layout. Strawberry Frog themed keycap puller and braided USB-C cable.",
+    "image": "https://i.postimg.cc/N0HTFNqx/15892-643f634ed0527-One-3-TKL-Strawberry-Frog-1.jpg",
+    "availableQuantity": 13,
+    "price": 149.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "7",
+    "title": "HHKB Hybrid Type-S Topre Silent 45g 60% Bluetooth PBT",
+    "brand": "HHKB",
+    "description": "The HHKB Hybrid Type-S comes with full key map customization software as well as 6 DIP switches to customize user experience. Includes 3 adjustable keyboard heights for optimum comfort. Compatible with both PC and Mac, the 60-key HHKB Pro was designed by UNIX professionals and advanced programmers with high-speed typing efficiency in mind. The keyboard is customizable and can be easily modified, meaning it fits the purpose of any user.",
+    "image": "https://i.postimg.cc/vTz5McFF/3442-AX52-Q-Hybrid-Type-S-White-1.jpg",
+    "availableQuantity": 13,
+    "price": 149.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "8",
+    "title": "Varmilo x MK Glintstone Minilo VXT67 65% Hotswap Triple Mode Bluetooth + Wireless 2.4 GHz RGB",
+    "brand": "Varmilo",
+    "description": "Triple mode - wired with USB-C cable, Bluetooth 5.1, and 2.4 GHz Per-key RGB backlighting 1.5mm thick ABS Double Shot keycaps Flashing indicator light warns of low battery and Escape key lights up while charging Features Type-Cool sound dampening Indicator lights next to arrows for Caps Lock and F-row function Connect up to 3 devices wirelessly NKRO in wired mode and 6 key rollover in wireless mode Hotswap sockets New, MK-exclusive colorway of the popular Minilo series 1000 Hz polling rate when using wired or with 2.4 GHz",
+    "image": "https://i.postimg.cc/KcnNJ8W5/14711-636ac87724028-Minilo-VXT67-Eucalyptus.jpg",
+    "availableQuantity": 13,
+    "price": 119.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "9",
+    "title": "Varmilo Minilo VXT67 Eucalyptus 65% Hotswap Triple Mode Bluetooth + Wireless 2.4 GHz RGB",
+    "brand": "Varmilo",
+    "description": "Triple mode - wired with USB-C cable, Bluetooth 5.1, and 2.4 GHz Per-key RGB backlighting 1.5mm thick ABS Double Shot keycaps Flashing indicator light warns of low battery and Escape key lights up while charging Features Type-Cool sound dampening Indicator lights next to arrows for Caps Lock and F-row function Connect up to 3 devices wirelessly NKRO in wired mode and 6 key rollover in wireless mode Hotswap sockets with a variety of switch options New Varmilo colorway inspired by the Eucalyptus plant",
+    "image": "https://i.postimg.cc/NfDxvPB9/15852-63ed149ae54d5-Minilo-VXT67-Glintstone.jpg",
+    "availableQuantity": 13,
+    "price": 119.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "10",
+    "title": "Varmilo Sword 68 Lilac Aluminum 65% Hotswap Bluetooth + 2.4 GHz RGB",
+    "brand": "Varmilo",
+    "description": "Full 6063 aluminum CNC case with anode oxidation Connect 3 ways- wired with USB-C cable or wirelessly with Bluetooth 5.0 or 2.4 GHz PC plate and gold-plated FR4 PCB Leaf spring gasket mount Several layers of sound absorption: 3* layers Poron foam, 2* layers PET foam, 1* layer IXPE foam 4000mAh rechargeable battery Custom RGB & layout control software Double Shot ABS keycaps Hotswap PCB RGB backlighting Wired / wireless switch under Caps Lock keycap",
+    "image": "https://i.postimg.cc/R061fSfK/17301-GMVAH-Varmilo-Sword-68-Lilac-Aluminum-65-Hotswap-Bluetooth-24-GHz-1.png",
+    "availableQuantity": 13,
+    "price": 119.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "11",
+    "title": "Varmilo VA Series V2 Summit R1 White LED Dye Sub PBT",
+    "brand": "Varmilo",
+    "description": "Meet the new, upgraded VA Series V2! The amazing colorways you love have just received a quality upgrade! All keyboards in this series now come with a standard USB-C cable. The kickstand has been upgraded to a double-section kickstand to give you even more options. All LEDs are now North-facing for those keyboards that have them. The entire V2 series has cable grooves on the bottom case to allow the cable to exit from underneath the keyboard on the left, right, or middle to allow you to customize your space to fit you. Sound-proof silicone pads have been placed between the PCB and the positioning plate to make your typing experience even quieter. All indicator lights have been moved to the top right of the keyboard to minimize distractions. Take a look and explore the new VA Series V2!",
+    "image": "https://i.postimg.cc/W4BGwB6K/15391-63ae07158c122-VEA108-Summit-White-LED.png",
+    "availableQuantity": 13,
+    "price": 119.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "12",
+    "title": "Realforce R3 Black TKL Bluetooth Mechanical Keyboard",
+    "brand": "Realforce",
+    "description": "Meet the new, upgraded VA Series V2! The amazing colorways you love have just received a quality upgrade! All keyboards in this series now come with a standard USB-C cable. The kickstand has been upgraded to a double-section kickstand to give you even more options. All LEDs are now North-facing for those keyboards that have them. The entire V2 series has cable grooves on the bottom case to allow the cable to exit from underneath the keyboard on the left, right, or middle to allow you to customize your space to fit you. Sound-proof silicone pads have been placed between the PCB and the positioning plate to make your typing experience even quieter. All indicator lights have been moved to the top right of the keyboard to minimize distractions. Take a look and explore the new VA Series V2!",
+    "image": "https://i.postimg.cc/rm24rSq2/17281-R4-E2-W-Realforce-R3-Black-TKL-Bluetooth-Mechanical-Keyb-1.jpg",
+    "availableQuantity": 13,
+    "price": 119.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "13",
+    "title": "Realforce R3 Black Bluetooth Mechanical Keyboard",
+    "brand": "Realforce",
+    "description": "Meet the new, upgraded VA Series V2! The amazing colorways you love have just received a quality upgrade! All keyboards in this series now come with a standard USB-C cable. The kickstand has been upgraded to a double-section kickstand to give you even more options. All LEDs are now North-facing for those keyboards that have them. The entire V2 series has cable grooves on the bottom case to allow the cable to exit from underneath the keyboard on the left, right, or middle to allow you to customize your space to fit you. Sound-proof silicone pads have been placed between the PCB and the positioning plate to make your typing experience even quieter. All indicator lights have been moved to the top right of the keyboard to minimize distractions. Take a look and explore the new VA Series V2!",
+    "image": "https://i.postimg.cc/505Cq6tY/17283-M7-KTI-Realforce-R3-Black-Bluetooth-Mechanical-Keyboard-1.jpg",
+    "availableQuantity": 13,
+    "price": 119.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "14",
+    "title": "Royal Kludge RK H81",
+    "brand": "Royal Kludge",
+    "description": "KH81, comes with a mode-switch knob & gasket design. and It can connect up to 3 devices via bluetooth at the same time and switch between them by knob easily. South-facing RGB backlit keyboard. Customization available both on-board & via a Royal Kludge proprietary software. Ergonomic keyboard design and long battery life of 3750 mAh to offer the most comfortable gaming and work experience. Trio Mode(Bluetooth 5.1, 2.4Ghz and Wired).",
+    "image": "  https://i.postimg.cc/wMCMCz38/RKH81-11-jpg.webp",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "15",
+    "title": "Royal Kludge RK M75",
+    "brand": "Royal Kludge",
+    "description": "KH81, comes with a mode-switch knob & gasket design. and It can connect up to 3 devices via bluetooth at the same time and switch between them by knob easily. South-facing RGB backlit keyboard. Customization available both on-board & via a Royal Kludge proprietary software. Ergonomic keyboard design and long battery life of 3750 mAh to offer the most comfortable gaming and work experience. Trio Mode(Bluetooth 5.1, 2.4Ghz and Wired).",
+    "image": " https://i.postimg.cc/Y2ZvG6Rn/RKM75-1-jpg.webp",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "16",
+    "title": "SK64 – PBT & RGB (Gateron Optical Switches)",
+    "brand": "skylong",
+    "description": "KH81, comes with a mode-switch knob & gasket design. and It can connect up to 3 devices via bluetooth at the same time and switch between them by knob easily. South-facing RGB backlit keyboard. Customization available both on-board & via a Royal Kludge proprietary software. Ergonomic keyboard design and long battery life of 3750 mAh to offer the most comfortable gaming and work experience. Trio Mode(Bluetooth 5.1, 2.4Ghz and Wired).",
+    "image": "https://i.postimg.cc/505Cq6tY/17283-M7-KTI-Realforce-R3-Black-Bluetooth-Mechanical-Keyboard-1.jpg",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  },
+
+  {
+    "_id": "17",
+    "title": "QwertyKey80 Astro Bluetooth Wireless Hotswap RGB",
+    "brand": "QwertyKey",
+    "description": "The QK80 Astro keyboard embarks on a cosmic odyssey, with keys reminiscent of the control panels of a spaceship, ready to navigate among the stars. Its design is a tribute to space exploration, with inscriptions evoking missions to Mars and beyond. Each press is a step into the unknown, a perfect combination for the digital astronaut who dreams of the ultimate frontiers of technology and space.",
+    "image": "https://i.postimg.cc/jSznrDz8/qk61pro-black-rgb-on-b4a029a0-12d6-4e45-9bdf-e5931e861028.png",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "18",
+    "title": "QwertyKey61 PRO Neagra Hotswap RGB VIA Gasket Mounted Tastatura Mecanica Gaming",
+    "brand": "QwertyKey",
+    "description": "This keyboard is a compact and modern model, called QWERTYKEY61 PRO, which will satisfy both the needs of gamers and users who value mobility and design. With a size of 60%, it saves desk space and is easy to carry. 60% size for increased portability and optimization of desk space. Full RGB lighting with VIA/QMK support for customization. Hotswap for easy switch replacement and customization. Modern and clean design.",
+    "image": "https://i.postimg.cc/NM0KTbZV/qk61pro-white-rgb-on-c493e315-b99a-482b-9794-4758c1e23e5d.png",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "19",
+    "title": "QwertyKey61 PRO Alba Hotswap RGB VIA Gasket Mounted Tastatura Mecanica Gaming",
+    "brand": "QwertyKey",
+    "description": "This keyboard is a compact and modern model, called QWERTYKEY61 PRO, which will satisfy both the needs of gamers and users who value mobility and design. With a size of 60%, it saves desk space and is easy to carry. 60% size for increased portability and optimization of desk space. Full RGB lighting with VIA/QMK support for customization. Hotswap for easy switch replacement and customization. Modern and clean design.",
+    "image": "https://i.postimg.cc/T1LhN1dJ/qk80-qwertykey-astro-gasket-mount-rgb-mechanical-keyboard-tastatura-mecanica-rgb-on.png",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "20",
+    "title": "QwertyKey Rice V2 Neagra Hotswap Tastatura Mecanica Gaming",
+    "brand": "QwertyKey",
+    "description": "The QwertyKey Rice V2 keyboard is a compact mechanical keyboard with RGB lighting and unique theme design. It features custom keys, including a key inscribed with (rice in Japanese) and a spacebar decorated with a bowl of rice and chopsticks. Ideal for users who value performance and distinctive aesthetics.",
+    "image": "https://i.postimg.cc/zf8bDq7q/qwertykey-tastatura-mecanica-gaming-hotswap-2023-carpathian-2-edited-rgb.png",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "21",
+    "title": "QwertyKey75 Carpathian Bluetooth Wireless Hotswap RGB VIA Gasket Mounted Tastatura Mecanica Gaming",
+    "brand": "QwertyKey",
+    "description": "Tastatura QwertyKey75 Carpathian Bluetooth Wireless Hotswap RGB Gasket Mounted are caracteristici cheie: 4 Unique Variants: Terminal, Carpathian, Samurai and Ramen with unique PBT DYE Sub keycap design for a memorable experience. Bluetooth/Wireless: Bluetooth 5.1 and dongle wireless connection, powered by a 4000mAh rechargeable battery. Carpathian comes with a set of OEM profile keys.",
+    "image": "https://i.postimg.cc/s2mBvbH7/randare-samurai-qk75-rgb-2-f213be96-b122-4fcb-9b9d-5f9f1a4173bd45.png",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "22",
+    "title": "QwertyKey75 Samurai Bluetooth Wireless Hotswap RGB VIA Gasket Mounted Tastatura Mecanica Gaming",
+    "brand": "QwertyKey",
+    "description": "The QwertyKey75 Samurai Bluetooth Wireless Hotswap RGB Gasket Mounted Keyboard has key features: Three Unique Variants: Terminal, Carpathian and Samurai with unique PBT DYE Sub keycap design for a memorable experience. The Samurai comes with a set of MSA profile keys.",
+    "image": "https://i.postimg.cc/d1SL9rY0/ricev2-black-RGB-main.png",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  },
+  {
+    "_id": "23",
+    "title": "Royal Kludge RK M75 Charcoal",
+    "brand": "Royal Kludge",
+    "description": "Hot-swappable wireless mechanical keyboard with Mechanical key switches RKM75, comes with Gasket design, Multi-functional Pixel screen which displays battery level, WIN/MAC, wired/2.4G/BT mode, volume level and a knob design for power on/off, volume adjustment, switching mode. South-facing RGB backlit keyboard. Customization available both on-board & via a Royal Kludge proprietary software. Ergonomic keyboard design and long battery life of 3750 mAh to offer the most comfortable gaming and work experience. Trio Mode(Bluetooth, 2.4Ghz and Wired).",
+    "image": "https://i.postimg.cc/5Nz6wXkx/m75-charcoal-1-1-jpg.webp",
+    "availableQuantity": 13,
+    "price": 6999.0,
+    "rating": 4.5
+  }
+]

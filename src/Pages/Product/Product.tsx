@@ -1,21 +1,28 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import ProductCard from "../../Components/ProductCard/ProductCard";
 import { useRef, useState } from "react";
+import { TProduct, useGetAllProductsQuery } from "../../Redux/api/api";
+import Loader from "../../Components/Animation/Loader";
 
-const Product = () => {
+const Product: React.FC = () => {
   const [price, setPrice] = useState(0);
   const rangeRef = useRef<HTMLInputElement>(null);
+  const [page, setPage] = useState(1);
 
   const updatePrice = (value: number) => {
     setPrice(value);
   };
-
   const resetPrice = () => {
     setPrice(0);
     if (rangeRef.current) {
       rangeRef.current.value = "0";
     }
   };
+
+  const { data, isLoading, error } = useGetAllProductsQuery();
+  const products = data?.data;
+
+  if (error) return <div>Error loading products</div>;
 
   return (
     <>
@@ -132,7 +139,7 @@ const Product = () => {
                     htmlFor="htmlCheckbox"
                     className="flex w-full space-x-2 text-md"
                   >
-                    Apple
+                    Ducky
                   </label>
                 </div>
               </div>
@@ -140,13 +147,33 @@ const Product = () => {
             {/* right side */}
             <div className="col-span-3 mt-6 md:mt-0 lg:mt-0 px-6 md:px-0 lg:px-0">
               {/* show all products grid start */}
-              <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-              </div>
+              {isLoading ? (
+                <Loader></Loader>
+              ) : (
+                <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
+                  {products?.map((product: TProduct) => (
+                    <ProductCard
+                      product={product}
+                      key={product._id}
+                    ></ProductCard>
+                  ))}
+                </div>
+              )}
               {/* show all products grid end*/}
+              <div className="flex justify-center gap-4 mt-4">
+                <button
+                  className="gradient-border px-4 py-2 hover:bg-gray-800"
+                  onClick={() => setPage(page - 1)}
+                >
+                  Previous
+                </button>
+                <button
+                  className="gradient-border px-4 py-2 hover:bg-gray-800"
+                  onClick={() => setPage(page + 1)}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -13,8 +13,8 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import TermConditions from "./Pages/TermConditions/TermConditions";
 import Cart from "./Pages/Cart/Cart";
 
+
 function App() {
- 
   return (
     <>
       <BrowserRouter>
@@ -41,7 +41,7 @@ function App() {
             element={<RefundPolicy></RefundPolicy>}
           ></Route>
           <Route
-            path="/product/details"
+            path="/product/details/:id"
             element={<ProductDetails></ProductDetails>}
           ></Route>
           <Route path="*" element={<Home></Home>} />

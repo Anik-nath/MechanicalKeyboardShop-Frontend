@@ -51,3 +51,14 @@ body {
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px); /* For Safari */
 }
+.slick-slide{
+  padding: 0px 8px;
+}
+.slick-prev{
+  left: 0px;
+  z-index: 1;
+ }
+ .slick-next{
+  right: 0px;
+  z-index: 1;
+ }
