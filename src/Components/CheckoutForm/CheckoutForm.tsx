@@ -12,12 +12,13 @@ const CheckoutForm = () => {
         </h2>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label htmlFor="fullname" className="block text-white mb-1">
-              Fullname
+            <label htmlFor="firstname" className="block text-white mb-1">
+              Firstname
             </label>
             <input
+              placeholder="Anik"
               type="text"
-              id="fullname"
+              id="firstname"
               className="w-full bg-transparent gradient-border text-white outline-none border py-2 px-3   "
             />
           </div>
@@ -26,6 +27,7 @@ const CheckoutForm = () => {
               Lastname
             </label>
             <input
+              placeholder="Nath"
               type="text"
               id="last_name"
               className="w-full bg-transparent gradient-border text-white outline-none border py-2 px-3"
@@ -38,6 +40,7 @@ const CheckoutForm = () => {
               Email
             </label>
             <input
+              placeholder="example@gmail.com"
               type="text"
               id="email"
               className="w-full bg-transparent gradient-border text-white outline-none border py-2 px-3"
@@ -48,6 +51,7 @@ const CheckoutForm = () => {
               Phone
             </label>
             <input
+              placeholder="018XXXXXXXX"
               type="text"
               id="phone"
               className="w-full bg-transparent gradient-border text-white outline-none border py-2 px-3"
@@ -60,6 +64,7 @@ const CheckoutForm = () => {
             Address
           </label>
           <input
+            placeholder="Ex: 123 road, ABCD building, Ctg"
             type="text"
             id="address"
             className="w-full bg-transparent gradient-border text-white outline-none border py-2 px-3   "
@@ -72,6 +77,7 @@ const CheckoutForm = () => {
               City
             </label>
             <input
+              placeholder=""
               type="text"
               id="city"
               className="w-full bg-transparent gradient-border text-white outline-none border py-2 px-3   "

@@ -1,0 +1,11 @@
+#relatedProduct .slick-slide {
+  padding: 0px 8px;
+}
+#relatedProduct .slick-prev {
+  left: 0px;
+  z-index: 1;
+}
+#relatedProduct .slick-next {
+  right: 0px;
+  z-index: 1;
+}

@@ -48,9 +48,9 @@ const ProductCard: React.FC<TProductCardProps> = ({ product }) => {
               <p className="text-lg font-semibold text-white cursor-auto my-6">
                 Price: ${product.price}
               </p>
-              <button className="ml-auto p-2">
+              <a href="/cart" className="ml-auto p-2">
                 <ShoppingCartIcon className="text-white h-6 w-6"></ShoppingCartIcon>
-              </button>
+              </a>
             </div>
           </div>
         </a>

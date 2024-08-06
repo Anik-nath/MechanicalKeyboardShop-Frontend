@@ -9,7 +9,6 @@ import {
 } from "@headlessui/react";
 import {
   Bars3Icon,
-  MagnifyingGlassIcon,
   ShoppingCartIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
@@ -18,6 +17,7 @@ import { UserIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import ShopingCart from "../ShopingCart/ShopingCart";
 import { useLocation } from "react-router-dom";
+import SearchField from "../SearchField/SearchField";
 
 const navigation = [
   { name: "Home", href: "/home", current: true },
@@ -37,15 +37,6 @@ export default function Navbar() {
   const isNavbarVisible = !hideNavbarRoutes.includes(location.pathname);
 
   const [open, setOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleImageClick = () => {
-    setIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
 
   return (
     <>
@@ -74,7 +65,7 @@ export default function Navbar() {
                   <img
                     alt="Brand logo"
                     src={brandlogo}
-                    className="h-7 w-auto"
+                    className="h-6 md:h-7 lg:h-7 w-auto"
                   />
                 </div>
                 {/* desktop view menu item */}
@@ -101,54 +92,7 @@ export default function Navbar() {
               {/* right side item */}
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* search field */}
-                <button
-                  onClick={handleImageClick}
-                  type="button"
-                  className="relative rounded-full  p-1 text-gray-300 hover:text-white focus:outline-none "
-                >
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">search</span>
-                  <MagnifyingGlassIcon aria-hidden="true" className="h-6 w-6" />
-                </button>
-                {isOpen && (
-                  <div className="fixed inset-0 flex items-center justify-center z-50">
-                    <div className="relative">
-                      <button
-                        className="absolute top-0 right-0 mt-2 mr-2 text-black text-2xl font-bold"
-                        onClick={closeModal}
-                      >
-                        &times;
-                      </button>
-                      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-                        <div className="md:flex">
-                          <div className="md:shrink-0">
-                            <img
-                              className="h-48 w-full object-cover md:h-full md:w-48"
-                              src="https://loremflickr.com/g/320/240/team"
-                            />
-                          </div>
-                          <div className="p-8">
-                            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-                              Company retreats
-                            </div>
-                            <a
-                              href="#"
-                              className="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
-                            >
-                              Incredible accommodation for your team
-                            </a>
-                            <p className="mt-2 text-slate-500">
-                              Looking to take your team away on a retreat to
-                              enjoy awesome food and take in some sunshine? We
-                              have a list of places to do just that.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
+                <SearchField></SearchField>
                 {/* Cart dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
@@ -158,7 +102,7 @@ export default function Navbar() {
                     >
                       <ShoppingCartIcon
                         aria-hidden="true"
-                        className="h-6 w-6"
+                        className="h-5 w-5 lg:h-6 lg:w-6 md:h-6 md:w-6"
                       />
                       <ShopingCart open={open} setOpen={setOpen}></ShopingCart>
                     </MenuButton>
@@ -168,7 +112,10 @@ export default function Navbar() {
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <MenuButton className="relative flex rounded-full p-1 text-gray-300 hover:text-white focus:outline-none">
-                      <UserIcon aria-hidden="true" className="h-6 w-6" />
+                      <UserIcon
+                        aria-hidden="true"
+                        className="h-5 w-5 lg:h-6 lg:w-6 md:h-6 md:w-6"
+                      />
                     </MenuButton>
                   </div>
                   <MenuItems

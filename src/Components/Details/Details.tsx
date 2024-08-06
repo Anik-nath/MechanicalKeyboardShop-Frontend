@@ -8,6 +8,7 @@ import StarRatings from "react-star-ratings";
 import ProductCard, { TProductCardProps } from "../ProductCard/ProductCard";
 import { TProduct, useGetAllProductsQuery } from "../../Redux/api/api";
 import Slider from "react-slick";
+import "./Details.css";
 
 const Details: React.FC<TProductCardProps> = ({ product }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -160,7 +161,7 @@ const Details: React.FC<TProductCardProps> = ({ product }) => {
         <h1 className="text-2xl font-medium uppercase text-white lg:text-2xl mb-8">
           Related products
         </h1>
-        <div>
+        <div id="relatedProduct">
           <Slider {...settings}>
             {products
               ?.filter((item) => item.brand === product.brand)

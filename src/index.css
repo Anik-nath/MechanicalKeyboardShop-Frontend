@@ -51,14 +51,33 @@ body {
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px); /* For Safari */
 }
-.slick-slide{
-  padding: 0px 8px;
+.slick-dots li {
+  margin: 0px 10px;
 }
-.slick-prev{
-  left: 0px;
-  z-index: 1;
- }
- .slick-next{
-  right: 0px;
-  z-index: 1;
- }
+.slick-dots li button::before {
+  opacity: 0.25;
+  background: rgba(255, 255, 255, 0.9);
+  content: "";
+  width: 30px;
+  height: 3px;
+}
+.keyboard-button {
+  padding: 8px 20px;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  background-color: #ddd;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  box-shadow: 0px 6px 0px 0px #aaa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.keyboard-button:active {
+  box-shadow: 0 4px #aaa;
+  transform: translateY(2px);
+}
+.slick-dots {
+  bottom: 20px;
+}

@@ -27,7 +27,14 @@ export const productApi = createApi({
     getProductById: builder.query<TResponse, string>({
       query: (_id) => `/product/${_id}`,
     }),
+    searchProducts: builder.query({
+      query: (searchInput) => `/product?title=${searchInput}`,
+    }),
   }),
 });
 
-export const { useGetAllProductsQuery, useGetProductByIdQuery } = productApi;
+export const {
+  useGetAllProductsQuery,
+  useGetProductByIdQuery,
+  useLazySearchProductsQuery,
+} = productApi;
