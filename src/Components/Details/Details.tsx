@@ -20,6 +20,11 @@ const Details: React.FC<TProductCardProps> = ({ product }) => {
   };
   const { data } = useGetAllProductsQuery();
   const products = data?.data;
+
+  const relatedProducts = products
+    ?.filter((item) => item.brand === product.brand)
+    .filter((currentItem) => currentItem._id !== product._id);
+
   const settings = {
     dots: false,
     speed: 500,
@@ -55,6 +60,7 @@ const Details: React.FC<TProductCardProps> = ({ product }) => {
       },
     ],
   };
+
   return (
     <div className="mx-auto px-6 md:px-0 lg:px-0">
       <div className="flex flex-col md:flex-row -mx-4">
@@ -157,21 +163,20 @@ const Details: React.FC<TProductCardProps> = ({ product }) => {
         </div>
       </div>
       {/* Related products */}
-      <div className="py-20">
-        <h1 className="text-2xl font-medium uppercase text-white lg:text-2xl mb-8">
-          Related products
-        </h1>
-        <div id="relatedProduct">
-          <Slider {...settings}>
-            {products
-              ?.filter((item) => item.brand === product.brand)
-              .filter((currentItem) => currentItem._id !== product._id)
-              ?.map((product: TProduct) => (
+      {relatedProducts && relatedProducts.length > 0 && (
+        <div className="py-20">
+          <h1 className="text-2xl font-medium uppercase text-white lg:text-2xl mb-8">
+            Related products
+          </h1>
+          <div id="relatedProduct">
+            <Slider {...settings}>
+              {relatedProducts.map((product: TProduct) => (
                 <ProductCard product={product} key={product._id}></ProductCard>
               ))}
-          </Slider>
+            </Slider>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

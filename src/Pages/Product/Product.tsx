@@ -1,28 +1,70 @@
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon, NoSymbolIcon } from "@heroicons/react/24/outline";
 import ProductCard from "../../Components/ProductCard/ProductCard";
-import { useRef, useState } from "react";
+import { useRef, useEffect } from "react";
 import { TProduct, useGetAllProductsQuery } from "../../Redux/api/api";
 import Loader from "../../Components/Animation/Loader";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, AppDispatch } from "../../Redux/store";
+import {
+  resetPrice,
+  setPrice,
+  toggleBrand,
+  setSortByPrice,
+  resetAllFilters,
+  toggleInStock,
+  toggleOutOfStock,
+} from "../../Redux/Features/filterSlice";
 
 const Product: React.FC = () => {
-  const [price, setPrice] = useState(0);
   const rangeRef = useRef<HTMLInputElement>(null);
-  const [page, setPage] = useState(1);
+  const dispatch: AppDispatch = useDispatch();
 
-  const updatePrice = (value: number) => {
-    setPrice(value);
-  };
-  const resetPrice = () => {
-    setPrice(0);
-    if (rangeRef.current) {
-      rangeRef.current.value = "0";
-    }
-  };
+  const price = useSelector((state: RootState) => state.filter.price);
+  const brands = useSelector((state: RootState) => state.filter.brands);
+  const sortByPrice = useSelector(
+    (state: RootState) => state.filter.sortByPrice
+  );
+  const inStock = useSelector((state: RootState) => state.filter.inStock);
+  const outOfStock = useSelector((state: RootState) => state.filter.outOfStock);
 
-  const { data, isLoading, error } = useGetAllProductsQuery();
+  // fetch all products
+  const { data, isLoading } = useGetAllProductsQuery();
   const products = data?.data;
 
-  if (error) return <div>Error loading products</div>;
+  // all brands
+  const allbrands = [
+    "Ducky",
+    "Varmilo",
+    "QwertyKey",
+    "Realforce",
+    "Royal Kludge",
+    "skylong",
+    "HHKB",
+  ];
+
+  // filter and sort products
+  const filteredProducts = products
+    ?.filter((product: TProduct) => {
+      const priceMatch = price > 0 ? product.price <= price : true;
+      const brandMatch =
+        brands.length > 0 ? brands.includes(product.brand) : true;
+      const quantityMatch =
+        (inStock && product.availableQuantity > 0) ||
+        (outOfStock && product.availableQuantity === 0) ||
+        (!inStock && !outOfStock);
+      return priceMatch && brandMatch && quantityMatch;
+    })
+    .sort((a, b) => {
+      if (sortByPrice === "asc") return a.price - b.price;
+      if (sortByPrice === "desc") return b.price - a.price;
+      return 0;
+    });
+
+  useEffect(() => {
+    if (rangeRef.current) {
+      rangeRef.current.value = String(price);
+    }
+  }, [price]);
 
   return (
     <>
@@ -43,25 +85,30 @@ const Product: React.FC = () => {
           </div>
           <div className="flex items-center justify-end pr-6 md:mr-0 lg:pr-0 mb-4">
             <p className="pr-12 text-sm text-gray-300">
-              Showing 771 of 771 products
+              Showing {filteredProducts?.length || 0} of {products?.length || 0}
+              products
             </p>
-            <p className="px-4 font-semibold">Short By : </p>
+            <p className="px-4 font-semibold">Sort By : </p>
             <div className="group relative cursor-pointer py-2">
               <div className="flex items-center justify-between space-x-5 gradient-border px-4">
-                <a className="menu-hover my-2 py-2 text-base font-medium text-white lg:mx-4">
-                  Trending
-                </a>
+                <div className="menu-hover my-2 text-base text-white lg:mx-4 uppercase">
+                  Filter
+                </div>
                 <ChevronDownIcon className="h-5"></ChevronDownIcon>
               </div>
-
-              <div className="invisible absolute z-50 flex w-full flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
-                <a className="my-2 block border-b border-gray-300 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                  Best Selling
-                </a>
-
-                <a className="my-2 block border-b border-gray-300 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                  Featured
-                </a>
+              <div className="invisible absolute z-50 flex w-full flex-col bg-gray-100 py-1 text-gray-800 shadow-xl group-hover:visible">
+                <button
+                  onClick={() => dispatch(setSortByPrice("asc"))}
+                  className="my-2 text-sm block border-b border-gray-300 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
+                >
+                  Price, Low to High
+                </button>
+                <button
+                  onClick={() => dispatch(setSortByPrice("desc"))}
+                  className="my-2 text-sm block border-b border-gray-300 py-1 font-semibold text-gray-500 hover:text-black md:mx-2"
+                >
+                  Price, High to Low
+                </button>
               </div>
             </div>
           </div>
@@ -69,40 +116,45 @@ const Product: React.FC = () => {
             {/* left side  */}
             <div className="bg-gray-800 p-4">
               <div id="availability">
-                <p className="p-2">Availabilty</p>
+                <p className="p-2">Availability</p>
                 <div className="flex items-center space-x-2 rounded p-2">
                   <input
+                    onChange={() => dispatch(toggleInStock(!inStock))}
                     type="checkbox"
                     id="inStock"
                     name="inStock"
                     className="h-6 w-6 rounded shadow-sm accent-gray-600 cursor-pointer"
                   />
                   <label
-                    htmlFor="htmlCheckbox"
+                    htmlFor="inStock"
                     className="flex w-full space-x-2 text-md"
                   >
-                    In stock / Pre-order (50)
+                    In stock / Pre-order
                   </label>
                 </div>
                 <div className="flex items-center space-x-2 rounded p-2">
                   <input
+                    onChange={() => dispatch(toggleOutOfStock(!outOfStock))}
                     type="checkbox"
                     id="outOfStock"
                     name="outOfStock"
                     className="h-6 w-6 rounded shadow-sm accent-gray-600 cursor-pointer"
                   />
                   <label
-                    htmlFor="htmlCheckbox"
+                    htmlFor="outOfStock"
                     className="flex w-full space-x-2 text-md"
                   >
-                    Out of stock (150)
+                    Out of stock
                   </label>
                 </div>
               </div>
               <div id="price" className="py-6">
                 <div className="flex justify-between items-center">
                   <p className="p-2 font-semibold ">Price Range</p>
-                  <button onClick={resetPrice} className="p-2 font-semibold">
+                  <button
+                    onClick={() => dispatch(resetPrice())}
+                    className="p-2 font-semibold"
+                  >
                     Reset
                   </button>
                 </div>
@@ -117,7 +169,7 @@ const Product: React.FC = () => {
                       min={0}
                       max={1000}
                       onInput={(e) =>
-                        updatePrice(Number(e.currentTarget.value))
+                        dispatch(setPrice(Number(e.currentTarget.value)))
                       }
                     />
                   </div>
@@ -128,20 +180,32 @@ const Product: React.FC = () => {
                 </div>
               </div>
               <div id="Brand">
-                <p className="p-2 font-semibold">Keyboard Brand</p>
-                <div className="flex items-center space-x-2 rounded p-2">
-                  <input
-                    type="checkbox"
-                    name="brand"
-                    className="h-6 w-6 rounded shadow-sm accent-gray-600 cursor-pointer"
-                  />
-                  <label
-                    htmlFor="htmlCheckbox"
-                    className="flex w-full space-x-2 text-md"
+                <p className="p-2 font-semibold capitalize">Keyboard Brand</p>
+                {allbrands.map((brand) => (
+                  <div
+                    className="flex items-center space-x-2 rounded p-2 capitalize"
+                    key={brand}
                   >
-                    Ducky
-                  </label>
-                </div>
+                    <input
+                      type="checkbox"
+                      name="brand"
+                      className="h-6 w-6 rounded shadow-sm accent-gray-600 cursor-pointer"
+                      checked={brands.includes(brand)}
+                      onChange={() => dispatch(toggleBrand(brand))}
+                    />
+                    <label className="flex w-full space-x-2 text-md">
+                      {brand}
+                    </label>
+                  </div>
+                ))}
+              </div>
+              <div id="resetfilter" className="p-2 my-4">
+                <button
+                  onClick={() => dispatch(resetAllFilters())}
+                  className="gradient-border px-4 py-1"
+                >
+                  Reset All
+                </button>
               </div>
             </div>
             {/* right side */}
@@ -151,7 +215,7 @@ const Product: React.FC = () => {
                 <Loader></Loader>
               ) : (
                 <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
-                  {products?.map((product: TProduct) => (
+                  {filteredProducts?.map((product: TProduct) => (
                     <ProductCard
                       product={product}
                       key={product._id}
@@ -160,17 +224,26 @@ const Product: React.FC = () => {
                 </div>
               )}
               {/* show all products grid end*/}
+              {filteredProducts?.length === 0 ? (
+                <div id="noProducts">
+                  <div className="bg-gray-800 border border-dashed border-gray-600 flex justify-center items-center py-4 h-screen w-full">
+                    <div className="flex justify-center flex-col items-center">
+                      <NoSymbolIcon className="w-8 h-8 my-1 text-red-500"></NoSymbolIcon>
+                      <p className="text-lg text-gray-400">
+                        No Products Found !
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+
               <div className="flex justify-center gap-4 mt-4">
-                <button
-                  className="gradient-border px-4 py-2 hover:bg-gray-800"
-                  onClick={() => setPage(page - 1)}
-                >
+                <button className="gradient-border px-4 py-2 hover:bg-gray-800">
                   Previous
                 </button>
-                <button
-                  className="gradient-border px-4 py-2 hover:bg-gray-800"
-                  onClick={() => setPage(page + 1)}
-                >
+                <button className="gradient-border px-4 py-2 hover:bg-gray-800">
                   Next
                 </button>
               </div>
