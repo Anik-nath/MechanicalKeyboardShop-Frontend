@@ -6,6 +6,8 @@ interface FilterState {
   sortByPrice: "asc" | "desc" | null;
   inStock: boolean;
   outOfStock: boolean;
+  currentPage: number;
+  itemsPerPage: number;
 }
 
 const initialState: FilterState = {
@@ -14,6 +16,8 @@ const initialState: FilterState = {
   sortByPrice: null,
   inStock: false,
   outOfStock: false,
+  currentPage: 1,
+  itemsPerPage: 8,
 };
 
 const filterSlice = createSlice({
@@ -48,6 +52,13 @@ const filterSlice = createSlice({
       state.brands = [];
       state.sortByPrice = null;
     },
+    setCurrentPage: (state, action: PayloadAction<number>) => {
+      state.currentPage = action.payload;
+    },
+    setItemsPerPage: (state, action: PayloadAction<number>) => {
+      state.itemsPerPage = action.payload;
+      state.currentPage = 1;
+    },
   },
 });
 
@@ -59,5 +70,6 @@ export const {
   resetAllFilters,
   toggleInStock,
   toggleOutOfStock,
+  setCurrentPage,
 } = filterSlice.actions;
 export default filterSlice.reducer;

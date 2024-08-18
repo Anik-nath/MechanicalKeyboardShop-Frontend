@@ -13,6 +13,7 @@ import {
   resetAllFilters,
   toggleInStock,
   toggleOutOfStock,
+  setCurrentPage,
 } from "../../Redux/Features/filterSlice";
 
 const Product: React.FC = () => {
@@ -26,6 +27,12 @@ const Product: React.FC = () => {
   );
   const inStock = useSelector((state: RootState) => state.filter.inStock);
   const outOfStock = useSelector((state: RootState) => state.filter.outOfStock);
+  const currentPage = useSelector(
+    (state: RootState) => state.filter.currentPage
+  );
+  const itemsPerPage = useSelector(
+    (state: RootState) => state.filter.itemsPerPage
+  );
 
   // fetch all products
   const { data, isLoading } = useGetAllProductsQuery();
@@ -66,6 +73,16 @@ const Product: React.FC = () => {
     }
   }, [price]);
 
+  // Pagination
+  const totalProducts = filteredProducts?.length || 0;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedProducts = filteredProducts?.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    dispatch(setCurrentPage(page));
+  };
+
   return (
     <>
       <div className="bg-gray-900 pb-12">
@@ -85,8 +102,8 @@ const Product: React.FC = () => {
           </div>
           <div className="flex items-center justify-end pr-6 md:mr-0 lg:pr-0 mb-4">
             <p className="pr-12 text-sm text-gray-300">
-              Showing {filteredProducts?.length || 0} of {products?.length || 0}
-              products
+              Showing <span>{paginatedProducts?.length || 0}</span> of{" "}
+              <span>{products?.length || 0}</span> products
             </p>
             <p className="px-4 font-semibold">Sort By : </p>
             <div className="group relative cursor-pointer py-2">
@@ -210,12 +227,12 @@ const Product: React.FC = () => {
             </div>
             {/* right side */}
             <div className="col-span-3 mt-6 md:mt-0 lg:mt-0 px-6 md:px-0 lg:px-0">
-              {/* show all products grid start */}
+              {/* show all products start */}
               {isLoading ? (
                 <Loader></Loader>
               ) : (
                 <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
-                  {filteredProducts?.map((product: TProduct) => (
+                  {paginatedProducts?.map((product: TProduct) => (
                     <ProductCard
                       product={product}
                       key={product._id}
@@ -223,7 +240,7 @@ const Product: React.FC = () => {
                   ))}
                 </div>
               )}
-              {/* show all products grid end*/}
+              {/* show all products end*/}
               {filteredProducts?.length === 0 ? (
                 <div id="noProducts">
                   <div className="bg-gray-800 border border-dashed border-gray-600 flex justify-center items-center py-4 h-screen w-full">
@@ -239,11 +256,28 @@ const Product: React.FC = () => {
                 ""
               )}
 
-              <div className="flex justify-center gap-4 mt-4">
-                <button className="gradient-border px-4 py-2 hover:bg-gray-800">
+              <div
+                id="pagination"
+                className="flex justify-center items-center gap-4 mt-4"
+              >
+                <button
+                  disabled={currentPage <= 1}
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  className="gradient-border px-4 py-2 hover:bg-gray-800"
+                >
                   Previous
                 </button>
-                <button className="gradient-border px-4 py-2 hover:bg-gray-800">
+                <div>
+                  Page {currentPage} of{" "}
+                  {Math.ceil(totalProducts / itemsPerPage)}
+                </div>
+                <button
+                  disabled={
+                    currentPage >= Math.ceil(totalProducts / itemsPerPage)
+                  }
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  className="gradient-border px-4 py-2 hover:bg-gray-800"
+                >
                   Next
                 </button>
               </div>

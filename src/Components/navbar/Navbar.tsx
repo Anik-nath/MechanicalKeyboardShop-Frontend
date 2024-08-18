@@ -9,7 +9,9 @@ import {
 } from "@headlessui/react";
 import {
   Bars3Icon,
+  Bars4Icon,
   ShoppingCartIcon,
+  UserCircleIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import brandlogo from "../../assets/logo/logo-1.png";
@@ -18,6 +20,7 @@ import { useState } from "react";
 import ShopingCart from "../ShopingCart/ShopingCart";
 import { useLocation } from "react-router-dom";
 import SearchField from "../SearchField/SearchField";
+import { ArrowRightStartOnRectangleIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Home", href: "/home", current: true },
@@ -61,13 +64,13 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 {/* brand logo */}
-                <div className="flex flex-shrink-0 items-center">
+                <a href="/" className="flex flex-shrink-0 items-center">
                   <img
                     alt="Brand logo"
                     src={brandlogo}
                     className="h-6 md:h-7 lg:h-7 w-auto"
                   />
-                </div>
+                </a>
                 {/* desktop view menu item */}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-6">
@@ -108,6 +111,9 @@ export default function Navbar() {
                     </MenuButton>
                   </div>
                 </Menu>
+                <Menu as="div" className="relative ml-3">
+                  <div className="text-gray-400 font-semibold text-lg">|</div>
+                </Menu>
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
@@ -120,22 +126,33 @@ export default function Navbar() {
                   </div>
                   <MenuItems
                     transition
-                    className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                    className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded bg-gray-700 py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
                   >
                     <MenuItem>
+                    <a
+                        href="/dashboard"
+                        className="flex gap-2 flex-row px-4 py-2 text-sm text-gray-100 data-[focus]:bg-gray-600"
+                      > 
+                      <Bars4Icon className="w-5 h-5"></Bars4Icon>
+                        Dashboard
+                      </a>
+                    </MenuItem>
+                    <MenuItem>
                       <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
-                      >
+                        href="/profile"
+                        className="flex gap-2 flex-row px-4 py-2 text-sm text-gray-100 data-[focus]:bg-gray-600"
+                      > 
+                      <UserCircleIcon className="w-5 h-5"></UserCircleIcon>
                         Your Profile
                       </a>
                     </MenuItem>
                     <MenuItem>
                       <a
-                        href="#"
-                        className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
+                        href="/login"
+                        className="px-4 py-2 text-sm text-gray-100 data-[focus]:bg-gray-600 flex gap-2 flex-row"
                       >
-                        Sign out
+                        <ArrowRightStartOnRectangleIcon className="w-5 h-5" ></ArrowRightStartOnRectangleIcon>
+                        <span>Login</span>
                       </a>
                     </MenuItem>
                   </MenuItems>
