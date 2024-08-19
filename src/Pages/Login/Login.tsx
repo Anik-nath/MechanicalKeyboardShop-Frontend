@@ -1,34 +1,43 @@
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useLoginMutation } from "../../Redux/api/api";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
+
 export default function Login() {
+    type TLogin = {
+      email:string;
+      password: string;
+    }
+    const { register, handleSubmit } = useForm<TLogin>();
+    const [login, { isSuccess, isError }] = useLoginMutation();
+    const onSubmit: SubmitHandler<TLogin> = data => login(data);
+    useEffect(() => {
+      if (isSuccess) {
+        toast.success('Successfully Signed Up!');
+      }
+      if (isError) {
+        toast.error('Failed to Sign Up!');
+      }
+    }, [isSuccess, isError]);
   return (
     <div className="py-20 text-white mx-auto max-w-screen-2xl sm:px-6 lg:px-12 bg-gray-900">
       <div className="mx-auto lg:max-w-7xl lg:mt-12 grid grid-cols-3">
         <div className="hidden lg:block">
-            <img className="w-full" src="https://i.postimg.cc/Dwhc7Ddm/photo-1597380162318-ac49db1dbcf0.jpg" alt="" />
+          <img
+            className="w-full"
+            src="https://i.postimg.cc/Dwhc7Ddm/photo-1597380162318-ac49db1dbcf0.jpg"
+            alt=""
+          />
         </div>
         <div className="col-span-3 md:col-span-2 lg:col-span-2 bg-gray-800 px-12 py-8 mx-6 md:mx-0 mt-8 md:mt-0">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="text-center space-y-2">
-                <h1 className="font-semibold text-xl">Login</h1>
-                <p className="text-gray-400">Login below to access your account</p>
+              <h1 className="font-semibold text-xl">Login</h1>
+              <p className="text-gray-400">
+                Login below to access your account
+              </p>
             </div>
-            <div className="mt-4">
-              <label
-                htmlFor="Name"
-                className="block text-sm font-semibold leading-6 text-white"
-              >
-                Name
-              </label>
-              <div className="mt-2.5">
-                <input
-                  type="name"
-                  id="name"
-                  placeholder="Anik Nath"
-                  autoComplete="name"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 bg-transparent gradient-border text-white shadow-sm outline-none placeholder:text-gray-600"
-                  name="name"
-                />
-              </div>
-            </div>
+            
             <div className="mt-4">
               <label
                 htmlFor="email"
@@ -38,6 +47,7 @@ export default function Login() {
               </label>
               <div className="mt-2.5">
                 <input
+                {...register("email")}
                   type="email"
                   id="email"
                   placeholder="example@gmail.com"
@@ -47,7 +57,27 @@ export default function Login() {
                 />
               </div>
             </div>
-            <button className="gradient-button block w-full mt-4 font-semibold">Login</button>
+            <div className="mt-4">
+              <label
+                htmlFor="Password"
+                className="block text-sm font-semibold leading-6 text-white"
+              >
+                Password
+              </label>
+              <div className="mt-2.5">
+                <input {...register("password")}
+                  type="password"
+                  id="password"
+                  placeholder="************"
+                  autoComplete="password"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 bg-transparent gradient-border text-white shadow-sm outline-none placeholder:text-gray-600"
+                  name="password"
+                />
+              </div>
+            </div>
+            <button type="submit" className="gradient-button block w-full mt-4 font-semibold">
+              Login
+            </button>
             <div className="flex items-center w-full py-8">
               <span className="flex-grow bg-gray-200 gradient-border"></span>
               <span className="mx-3 text-lg font-medium">Or</span>
@@ -76,7 +106,12 @@ export default function Login() {
               </div>
               <span className="ml-4">Sign In with Google</span>
             </button>
-            <p className="text-center mt-4 text-md">New User? <a className="gradient-text" href="/register">Create account here</a></p>
+            <p className="text-center mt-4 text-md">
+              New User?
+              <a className="gradient-text" href="/register">
+                Create account here
+              </a>
+            </p>
           </form>
         </div>
       </div>

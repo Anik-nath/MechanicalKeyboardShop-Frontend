@@ -30,6 +30,20 @@ export const productApi = createApi({
     searchProducts: builder.query({
       query: (searchInput) => `/product?title=${searchInput}`,
     }),
+    signup : builder.mutation({
+      query: (user) => ({
+        url : '/auth/signup',
+        method: "POST",
+        body: user
+      })
+    }),
+    login: builder.mutation({
+      query: (credentials) => ({
+        url: '/auth/login',
+        method: 'POST',
+        body: credentials,
+      }),
+    }),
   }),
 });
 
@@ -37,4 +51,6 @@ export const {
   useGetAllProductsQuery,
   useGetProductByIdQuery,
   useLazySearchProductsQuery,
+  useSignupMutation,
+  useLoginMutation
 } = productApi;

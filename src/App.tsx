@@ -15,6 +15,7 @@ import Cart from "./Pages/Cart/Cart";
 import Profile from "./Pages/Profile/Profile";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           ></Route>
           <Route path="*" element={<Home></Home>} />
         </Routes>
+        <ToastContainer />
         <Footer></Footer>
       </BrowserRouter>
     </>
